@@ -1,0 +1,89 @@
+.header {
+    height: 17vh;
+}
+.logo {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+}
+.a {
+    width: 311px;
+    font-size: 14px;
+    font-family: Segoe UI;
+    color: #224177;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15vh;
+}
+p {
+    font-weight: bold;
+}
+.b {
+    width: 311px;
+    font-size: 14px;
+    font-family: Segoe UI;
+    color: #224177;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+button {
+    background-color: #D5E7F7;
+    width: 191px;
+    height: 40px;
+    color: #375384;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    border-radius: 20px;
+    border: none;
+}
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.step {
+    display: block;
+    margin: 4vh auto 0;
+    height: 40vh;
+    width: 240px;
+    .step-1{
+        height: 36px;
+        align-items: center;
+        text-align: center;
+        .number{
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #224177;
+            span{
+                line-height: 36px;
+            }
+        }
+        .register{
+            text-align: start;
+            color: #224177;
+            font-size: 14px;
+        }
+    }
+    .br{
+        height: 30px;
+        width: 1px;
+        border-left: 1px solid #224177;
+        margin-left: 3px;
+    }
+}
+.mat-stepper-vertical {
+    margin-top: 8px;
+}  
+.mat-form-field {
+    margin-top: 16px;
+}
+.mat-step-label {
+    color: red;
+}
+.mat-vertical-content {
+    padding: 0px 0px 0px 0px;
+}

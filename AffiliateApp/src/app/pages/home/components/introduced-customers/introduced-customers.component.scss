@@ -1,0 +1,207 @@
+.introduced-customers {
+  width: 100vw;
+  height: 100vh;
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  .introduced-customers-container {
+    width: 90%;
+    margin: 0 auto;
+
+    header.notifications-header {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      color: #224177;
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+    }
+
+    .menu-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #fafafa;
+      text-align: center;
+      border-radius: 20px;
+      margin-top: 1.6rem;
+      padding: 0.4rem 0;
+
+      .list {
+        background: #d5e7f7;
+        border-radius: 20px;
+        font-weight: 500;
+        color: #224177;
+      }
+
+      .hierarchy-menu {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+
+    .affiliate-info {
+      border: 0.05rem solid #707070;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+
+      .detail-info {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        margin-top: 1.4rem;
+
+        .left-side {
+          border-right: 0.1rem solid #224177;
+
+          .amount {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .amount-number {
+              font-size: 1.6rem;
+              background-color: #ddb148;
+              width: 4rem;
+              height: 4rem;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 0.8rem;
+            }
+          }
+        }
+
+        .right-side {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 1rem;
+
+          p {
+            font-size: 1.1rem;
+          }
+
+          .notadvisory,
+          .advisor,
+          .pileofmoney,
+          .payment {
+            text-align: center;
+
+            p:first-child {
+              font-size: 1.6rem;
+              background-color: #fafafa;
+              width: 4rem;
+              height: 4rem;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    .customer {
+      display: flex;
+      padding: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fafafa;
+      border-radius: 2rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .left-side {
+        display: flex;
+        align-items: center;
+
+        .customer-avatar {
+          margin-right: 1.2rem;
+          height: 4rem;
+          width: 4rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .customer-info {
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .right-side {
+        .notadvisory {
+          display: block;
+          border: none;
+          background-color: #d5e7f7;
+          border-radius: 2rem;
+          padding: 0.3rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.body-container {
+  margin-top: 1.5em;
+::ng-deep .mat-tab-header {
+   left: 0;
+    background: #FAFAFA;
+    border-radius: 24px;
+}
+
+::ng-deep .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background: none;
+}
+
+::ng-deep .mat-tab-label {
+    height: 36px;
+    opacity: 1;
+    padding-left: 6px;
+    padding-right: 6px;
+    .mat-tab-label-content {
+        color: #9CAAC2;
+        width: 10em;
+        height: 2em;
+    }
+}
+
+::ng-deep .mat-tab-label-active .mat-tab-label-content {
+    background: #D5E7F7;
+    width: 10em;
+    height: 2em;
+    border-radius: 14px;
+    color: #224177;
+  }
+
+::ng-deep .mat-tab-labels {
+    justify-content: space-between;
+}
+}

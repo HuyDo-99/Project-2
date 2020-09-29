@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="dots">
+        <span class="material-icons" routerLink="/pages/calendar">keyboard_arrow_left</span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="account">Đặt lịch</div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="calendar-wrapper">
+        <ejs-calendar (change)="onValueChange($event)" class="e-customStyle"></ejs-calendar>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <span>Chọn giờ</span>
+    </div>
+    <div class="col-8">
+      <input [(ngModel)]="hour" type="time" />
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-4">
+      <span>Loại lịch</span>
+    </div>
+    <div class="col-8">
+      <select [(ngModel)]="type" (change)="chooseScheduleType($event.target.value)">
+        <option *ngFor="let item of scheduleType" [value]="item.type">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <div class="btn">
+        <button (click)="registerCalendar()">Đặt lịch</button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,51 @@
+.row{
+    margin-bottom: 1em;
+}
+.note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field{
+    color: #224177;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+mat-label{
+    color:#6B80A4;
+    
+}
+
+textarea{
+    height: 150px;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    padding-inline-start: 10px;
+    padding: 10px;
+    color: #224177;
+    font-weight: bold;
+    margin-top: 2em;
+}
+::ng-deep .dialog-container{
+    width: 600px;
+    .mat-form-field-wrapper{
+        padding-bottom: 0.5em;
+    }
+}
+.content{
+    align-items: start;
+}
+.imageForm{
+    max-width: 15em !important;
+    margin-left: 15px !important;
+    padding: 0 !important;
+    margin-top: 2em;
+
+}
+.w-100 {
+    margin-top: 1em;
+}

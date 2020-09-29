@@ -1,0 +1,47 @@
+<div class="affiliate-info">
+    <div class="detail-info">
+        <div class="left-side">
+            <div class="amount">
+                <p class="amount-number">{{customerSum}}</p>
+                <p>Tổng</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="notadvisory">
+                <p class="amount-number">{{otherCount}}</p>
+                <p>Chưa tư vấn</p>
+            </div>
+            <div class="advisor">
+                <p class="amount-number">{{l6Count}}</p>
+                <p>Đã tư vấn</p>
+            </div>
+            <div class="pileofmoney">
+                <p class="amount-number">{{l7Count}}</p>
+                <p>Đã cọc</p>
+            </div>
+            <div class="payment">
+                <p class="amount-number">{{l8Count}}</p>
+                <p>Đã đóng</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="customer-list" [ngStyle]="{'max-height.px':height}">
+    <div routerLink="information/{{customer.AffiliatedCustomerId}}" class="customer"  *ngFor="let customer of customers">
+        <div class="left-side">
+            <div class="customer-avatar">
+                <img [src]="customer.ProfileImageURL" alt="" />
+            </div>
+            <div class="customer-info">
+                <h3 class="fullName">{{customer.AffiliatedCustomerFullName}}</h3>
+                <p class="commission">Hoa hồng: <span>{{customer.Commision | number :"1.0-0"}} VNĐ</span></p>
+            </div>
+        </div>
+        <div class="right-side">
+            <button class="notadvisory">{{customer.PotentialLevelDesciption}}</button>
+        </div>
+    </div>
+   
+   
+</div>

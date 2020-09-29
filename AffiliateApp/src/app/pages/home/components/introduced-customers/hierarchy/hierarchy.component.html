@@ -1,0 +1,70 @@
+<!-- <div class="container-fluid">
+  <tree-root [nodes]="customerListFirst">
+    <ng-template #treeNodeTemplate let-node let-index="index">
+      <div class="row hierarchy">
+        <div class="hierarchy-lv1">
+          <div class="img">
+            <img src="{{node.data.ProfileImageURL}}" alt="">
+          </div>
+          <div class="info-customer">
+            <b>{{node.data.AffiliatedCustomerFullName}}</b>
+            <p>Hoa hồng:<span>{{node.data.Commision}}</span></p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </tree-root>
+
+</div> -->
+<div class="container-fluid scroll" [ngStyle]="{'max-height.px':height}">
+  <div class="row">
+    <div  id="hierarchy-1" class="hierarchy" *ngFor="let item of customerListFirst">
+      <div class="hierarchy-lv1" (click)="getCustomerHierarchyNext(item.AffiliatedCustomerId)">
+        <div class="img" >
+          <img src="{{item.ProfileImageURL}}" alt="">
+        </div>
+        <div class="info-customer">
+          <b>{{item.AffiliatedCustomerFullName}}</b>
+          <p>Hoa hồng: <span>{{item.Commision | number :"1.0-0"}} VNĐ</span></p>
+        </div>
+      </div>
+
+      <div id="hierarchy-2" class="hierarchy" style="position: relative; left: 30px;" [hidden]="!isShowl1"
+        *ngFor="let i of customerListNext">
+        <div class="hierarchy-lv2" *ngIf="i.CustomerId == item.AffiliatedCustomerId" (click)="getCustomerHierarchyNext1(i.AffiliatedCustomerId)">
+          <div class="img" >
+            <img src="{{i.ProfileImageURL}}" alt="">
+          </div>
+          <div class="info-customer">
+            <b>{{i.AffiliatedCustomerFullName}}</b>
+            <p>Hoa hồng: <span>{{i.Commision | number :"1.0-0"}} VNĐ</span></p>
+          </div>
+        </div>
+        <div id="hierarchy-3" class="hierarchy" style="position: relative; left: 30px;" *ngFor="let a of customerListNext1">
+          <div class="hierarchy-lv3" (click)="getCustomerHierarchyNext2(a.AffiliatedCustomerId)"
+            *ngIf="a.CustomerId == i.AffiliatedCustomerId && i.CustomerId == item.AffiliatedCustomerId">
+            <div class="img" >
+              <img src="{{a.ProfileImageURL}}" alt="">
+            </div>
+            <div class="info-customer">
+              <b>{{a.AffiliatedCustomerFullName}}</b>
+              <p>Hoa hồng: <span>{{a.Commision | number :"1.0-0"}} VNĐ</span></p>
+            </div>
+          </div>
+          <div id="hierarchy-4" class="hierarchy" style="position: relative; left: 30px;" *ngFor="let b of customerListNext2">
+            <div class="hierarchy-lv4"
+              *ngIf="b.CustomerId == a.AffiliatedCustomerId && a.CustomerId == i.AffiliatedCustomerId && i.CustomerId == item.AffiliatedCustomerId">
+              <div class="img">
+                <img src="{{b.ProfileImageURL}}" alt="">
+              </div>
+              <div class="info-customer">
+                <b>{{b.AffiliatedCustomerFullName}}</b>
+                <p>Hoa hồng: <span>{{b.Commision | number :"1.0-0"}} VNĐ</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

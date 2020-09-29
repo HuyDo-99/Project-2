@@ -1,0 +1,70 @@
+<div class="container-fluid category-container">
+    <div class="row">
+        <div class="col">
+            <div class="title">Danh mục tin tức</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="add-button" matTooltip="Tạo danh mục" (click)="createCategory()">
+                <i class="material-icons">
+                    add_circle_outline
+                </i>
+            </button>
+            <div class="search-box">
+                <input class="searchInput" matInput (keyup)="applyFilter($event.target.value)" placeholder="Tìm kiếm"><i
+                    class="material-icons">
+                    search
+                </i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" matSort
+                class="table-hover table-striped text-center customTableStyle">
+
+
+               
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Tên danh mục</th>
+                    <td mat-cell *matCellDef="let category">
+                        <div>{{category.Name}}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Mô tả</th>
+                    <td mat-cell *matCellDef="let category">
+                        <div>{{category.Description}}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                        Tác vụ
+                    </th>
+                    <td mat-cell *matCellDef="let category">
+                        <button class="add-button" matTooltip="Sửa tin tức" (click)="editCategory(category.CategoryId)">
+                            <i class="material-icons">
+                                create
+                            </i>
+                        </button>
+                        <button class="add-button" matTooltip="Xóa tin tức" (click)="deleteCategory(category.CategoryId)">
+                            <i class="material-icons">
+                                delete
+                            </i>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns; let category"></tr>
+            </table>
+            <mat-paginator class="paginatorStyle" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons="false">
+            </mat-paginator>
+        </div>
+    </div>
+</div>
+

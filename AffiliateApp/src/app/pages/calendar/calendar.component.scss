@@ -1,0 +1,194 @@
+.calendar-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 25px auto;
+  .e-calendar {
+    max-width: 100%;
+  }
+}
+.body-container {
+  ::ng-deep .mat-tab-header {
+    left: 0;
+    background: #fafafa;
+    border-radius: 24px;
+  }
+
+  ::ng-deep .mat-tab-label {
+    height: 36px;
+    opacity: 1;
+    padding-left: 6px;
+    padding-right: 6px;
+    .mat-tab-label-content {
+      color: #9caac2;
+      width: 7em;
+      height: 2em;
+      span {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  ::ng-deep
+    .mat-tab-header-pagination-controls-enabled
+    .mat-tab-header-pagination {
+    display: none;
+  }
+
+  ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background: none;
+  }
+
+  ::ng-deep .mat-tab-label-active .mat-tab-label-content {
+    background: #d5e7f7;
+    width: 8em;
+    height: 2em;
+    border-radius: 14px;
+    color: #224177;
+    span {
+      font-size: 0.8em;
+    }
+  }
+
+  ::ng-deep .mat-tab-labels {
+    justify-content: space-between;
+  }
+}
+//top menu
+.account {
+  text-align: center;
+  color: #224177;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-weight: bold;
+}
+.material-icons {
+  color: #224177;
+}
+.dots {
+  text-align: right;
+  margin-top: 5px;
+}
+//top menu
+.e-calendar .e-header .e-title,
+.e-bigger.e-small .e-calendar .e-header .e-title {
+  color: #224177;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-weight: bold;
+}
+.e-btn.e-flat.e-primary,
+.e-css.e-btn.e-flat.e-primary {
+  color: #224177;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-weight: bold;
+}
+.e-calendar .e-header .e-date-icon-prev::before {
+  color: #8393b0;
+  font-weight: bold;
+}
+.e-calendar .e-header .e-date-icon-next::before {
+  color: #8393b0;
+  font-weight: bold;
+}
+
+.e-calendar .e-content td.e-selected span.e-day,
+.e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day {
+  background-color: #d5e7f7;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+}
+.e-calendar .e-content td.e-selected span.e-day {
+  background-color:red;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+}
+.customer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.list-customer {
+  display: flex;
+  flex-direction: row;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.time {
+  color: #224177;
+  font-size: 14px;
+  font-family: Segoe UI;
+  font-weight: bold;
+}
+.name {
+  color: black;
+  font-size: 15px;
+  font-family: Segoe UI;
+  font-weight: bold;
+}
+.code {
+  color: black;
+  font-size: 15px;
+  font-family: Segoe UI;
+}
+
+.calendar-customer {
+  max-height: 32rem;
+  overflow: scroll;
+
+  .calendar-customer-container {
+    .calendar-content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      background-color: #eff5fa;
+      border-radius: 4rem;
+      padding: 1.2rem 1.6rem;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .left-side {
+        display: flex;
+        flex-direction: column;
+        color: #224177;
+        font-weight: 500;
+        font-size: 1.4rem;
+        border-right: 0.05rem solid #345081;
+      }
+
+      .right-side {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+
+        .logo {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #d5e7f7;
+          margin-left: 1.4rem;
+          margin-right: 0.7rem;
+
+          img {
+            width: 2.3rem;
+            height: 1.4rem;
+          }
+        }
+
+        .doctor-name {
+          margin-bottom: 0;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

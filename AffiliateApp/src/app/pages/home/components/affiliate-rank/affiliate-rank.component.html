@@ -1,0 +1,48 @@
+<div class="introduce-customers">
+    <div class="introduce-customers-container">
+      <header class="notifications-header">
+        <span class="material-icons back" routerLink="/">
+          navigate_before
+        </span>
+        <h3 class="title">Hạng Affiliate</h3>
+      </header>
+      <div class="introduce-link">
+        <h3>Hạng hiện tại:</h3>
+        <div class="rate">
+            <div class="rating">
+                <input disabled type="radio" id="star4" [checked]= "ranking == 4" name="rate" />
+                <label for="star4" title="text">4 stars</label>
+                <input disabled type="radio" id="star3" [checked]= "ranking == 3" name="rate" />
+                <label for="star3" title="text">3 stars</label>
+                <input disabled type="radio" id="star2" [checked]= "ranking == 2" name="rate" />
+                <label for="star2" title="text">2 stars</label>
+                <input disabled type="radio" id="star1" [checked]= "ranking == 1" name="rate" />
+                <label for="star1" title="text">1 star</label>
+        </div>
+        </div>
+       
+      </div>
+      <div class="introduce-id">
+        <h3>Lịch sử thay đổi</h3>
+        <div class="rate-history">
+            <div class="row" *ngFor="let item of listRank">
+                 <div class="col-5">
+                   <p>{{item.DateString}}</p>
+                 </div>
+                 <div class="rating">
+                    <input disabled type="radio"  value="4" [checked]="item.RankingValue===4" />
+                    <label >4 stars</label>  
+                    <input disabled type="radio" value="3" [checked]="item.RankingValue===3" />
+                    <label >3 stars</label>   
+                    <input disabled type="radio" value="2" [checked]="item.RankingValue===2" />
+                    <label >2 stars</label>            
+                    <input disabled type="radio" value="1" [checked]="item.RankingValue===1" />
+                    <label >1 star</label>
+                 </div>
+            </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  

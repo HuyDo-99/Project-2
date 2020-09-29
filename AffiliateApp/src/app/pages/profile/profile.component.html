@@ -1,0 +1,160 @@
+<div class="container-fluid">
+  <div class="container" style="position: relative;">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h3 class="account">Tài Khoản</h3>
+      </div>
+      <span class="material-icons create" (click)="onIsEdit()" style="color: #224177;" *ngIf="!isEdit">
+        create
+      </span>
+      <span  class="material-icons check" (click)="saveProfileChange()" style="color: #224177;" *ngIf="isEdit">
+        check
+      </span>
+      <div class="col-4">
+        <button mat-button [matMenuTriggerFor]="menu" style="margin-left: 5em;">
+          <h3 class="dots"><span class="material-icons"  style="color: #224177;">more_horiz</span></h3>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button (click)="logout()" mat-menu-item>
+            Đăng xuất
+          </button>
+          <button mat-menu-item routerLink="change-pass">Đổi mật khẩu</button>
+        </mat-menu>
+      </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col text-center">
+    <div class="avatar">
+      <p *ngIf="!userAvatarString">Chưa có ảnh đại diện</p>
+      <img [src]="userAvatarString" *ngIf="userAvatarString" />
+      <label for="userAvatar">
+        <span class="material-icons">
+          add_a_photo
+        </span>
+      </label>
+      <input #userAvatar type="file" accept="image/*" id="userAvatar" (change)="processFileUserAvatar(userAvatar.files)"
+        hidden />
+    </div>
+  </div>
+</div>
+<div class="container-fluid body-container profile">
+  <mat-tab-group>
+    <mat-tab label="Thông tin">
+      <ng-template mat-tab-label>
+        <span>Thông tin</span>
+      </ng-template>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 input-text">
+            Mã KH
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="customerID" readonly />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Họ và tên
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="fullName" [readonly]="!isEdit" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Giới tính
+          </div>
+          <div class="col-8">
+            <form action="" class="select-gender">
+              <input type="radio" name="gender" value="male" class="gender" style="color: #224177;"
+                (change)="chooseGenderType(1)" [checked]="gender === 1" [disabled]="!isEdit" />
+              Male<br />
+              <input type="radio" name="gender" value="female" class="gender" (change)="chooseGenderType(2)"
+                [checked]="gender === 2" [disabled]="!isEdit" />
+              Female<br />
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Ngày sinh
+          </div>
+          <div class="col-8">
+            <input class="input" type="date" [(ngModel)]="birth" [readonly]="!isEdit" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Điện thoại
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="phone" [readonly]="!isEdit" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Địa chỉ
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="address" [readonly]="!isEdit" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Email
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="email" [readonly]="!isEdit" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 input-text">
+            Số CMND
+          </div>
+          <div class="col-8">
+            <input class="input" type="text" [(ngModel)]="identificationCard" [readonly]="!isEdit" />
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Dịch vụ">
+      <ng-template mat-tab-label>
+        <span>Đơn hàng</span>
+      </ng-template>
+      <div class="tab-content">
+        <div class="details" routerLink="/pages/profile/details-order/{{item.ContractId}}" style="background-color: #FAFAFA; " *ngFor="let item of listDetails">
+          <div >
+            <h3>{{item.ContractContent}}</h3>
+          </div>
+          <div class="services row">
+            <div class="col-3">Dịch vụ:</div>
+            <div class="col-5">{{item.SurgerySubServiceName}}</div>
+            <div class="col-4" style="text-align: end;">
+              <!-- <div class="operationStatus">
+                <input type="checkbox" id="{{item.SurgerySubServiceID}}" hidden>
+                <label for="{{item.SurgerySubServiceID}}"><i class="material-icons">close</i></label>
+                <label for="{{item.SurgerySubServiceID}}"><i class="material-icons">check</i></label>
+              </div> -->
+            </div>
+          </div>
+          <div class="price row">
+            <div class="col-3">Giá trị:</div>
+            <div class="col">{{item.Amount | number: "1.0-0"}} VNĐ</div>
+          </div>
+        </div>
+      </div>
+
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<!-- <div class="info-customer">
+      <div class="code">
+        <div class="col-4 code">Mã KH:</div>
+        <div class="col-8 input-text">
+          <input class="input" type="text">
+        </div>
+      </div>
+    </div> -->

@@ -1,0 +1,59 @@
+<div class="lists">
+  <div class="lists-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">Thống kê</h3>
+      <div
+        class="search-box-container"
+        (click)="onIsSearch()"
+        [ngClass]="{ transform: isSearch }"
+      >
+        <i class="material-icons search-icon">
+          search
+        </i>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          [ngClass]="{ changeWidth: isSearch }"
+        />
+      </div>
+      <span
+        class="cancel"
+        (click)="onCancel()"
+        [ngClass]="{ showCancel: isSearch }"
+        >Cancel</span
+      >
+    </header>
+    <div class="menu-header">
+      <div class="chart">
+        <span (click)="backClicked()">Biểu đồ</span>
+      </div>
+      <div class="list">
+        <span routerLink="./">Danh sách</span>
+      </div>
+    </div>
+    <div class="table">
+      <div class="table-container">
+        <div class="header-table">
+          <span class="date-header">Ngày</span>
+          <span class="customers-header">Khách hàng</span>
+          <span class="commission-header">Hoa hồng</span>
+        </div>
+        <div class="contents">
+          <div class="content" *ngFor="let item of commissionList">
+            <span class="date-content">{{item.DateString}}</span>
+            <span class="customers-content">{{item.AffiliatedCustomerFullName}}</span>
+            <span class="commission-content">{{item.Amount | number: "."}} VNĐ</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="total-commission">
+    <p>Tổng hoa hồng: </p><span>{{total | number: "."}} VNĐ</span>
+</div> 
+</div>

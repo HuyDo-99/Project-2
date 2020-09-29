@@ -1,0 +1,86 @@
+.row{
+    // margin-bottom: 1em;
+    align-items: center;
+
+}
+.note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field{
+    color: #224177;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+mat-label{
+    color:#6B80A4;
+    
+}
+
+textarea{
+    height: 150px;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    padding-inline-start: 10px;
+    padding: 10px;
+    color: #224177;
+    font-weight: bold;
+}
+::ng-deep .dialog-container{
+    width: 600px;
+    height: 700px;
+    .mat-form-field-wrapper{
+        padding-bottom: 0.5em;
+    }
+}
+.content{
+    align-items: start;
+}
+.imageForm{
+    max-width: 15em !important;
+    margin-left: 15px !important;
+    padding: 0 !important;
+
+}
+.btn  {
+    margin-top: 27em;
+    width: 110px;
+    height: 45px;
+}
+.time {
+    width:100%; 
+    display: flex; 
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+.col-3-time {
+    background-color:#FAFAFA;
+    width: 24%;
+    height: 40px;
+    border-radius: 15px;
+    color: #224177;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    margin: 5px 2px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.a {
+    margin: 0px 2px;
+}
+.col-3-plus-time {
+    background-color:white;
+    width: 24%;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 12px;
+}

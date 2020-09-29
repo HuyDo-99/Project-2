@@ -1,0 +1,39 @@
+<div class="container-fluid seminor">
+    <table mat-table [dataSource]="dataSource" class="table-hover table-striped text-center customTableStyle">
+        <ng-container matColumnDef="Tiêu đề">
+            <th mat-header-cell *matHeaderCellDef>Tiêu đề </th>
+            <td mat-cell *matCellDef="let notiList"> 
+                {{notiList.Name}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Hình ảnh">
+            <th mat-header-cell *matHeaderCellDef> Hình ảnh </th>
+            <td mat-cell *matCellDef="let notiList"> 
+                <div class="post-image">
+                    <img src="{{notiList.ImageUrl}}" alt="" srcset="">
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Nội dung">
+            <th mat-header-cell *matHeaderCellDef> Nội dung </th>
+            <td mat-cell *matCellDef="let notiList" > 
+                <div style="width: 40vw; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center;">
+                    {{notiList.Description}}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Tác vụ">
+            <th mat-header-cell *matHeaderCellDef> Tác vụ </th>
+            <td mat-cell *matCellDef="let notiList"> 
+                <button class="add-button" matTooltip="Sửa thông báo" (click)="openEditForm(notiList.NotificationId)">
+                    <i class="material-icons">
+                        create
+                    </i>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="paginatorStyle" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons="false"></mat-paginator>
+</div>

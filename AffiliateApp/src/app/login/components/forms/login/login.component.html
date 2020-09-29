@@ -1,0 +1,23 @@
+<div class="login">
+  <div class="login-container">
+    <div class="logo">
+      <img src="assets/images/Group 1836.png" alt="logo" />
+    </div>
+    <div class="login-wrapper">
+      <form action="" class="login-form">
+        <h2 class="title">Welcome!</h2>
+        <input type="text" name="email" id="email" [(ngModel)]="userName" placeholder="Email" />
+        <input type="password" name="password" id="password" [(ngModel)]="pwd" placeholder="Password" />
+        <p *ngIf="error">Sai tên đăng nhập hoặc mật khẩu. Hãy thử lại</p>
+        <div class="save__login-info">
+          <p routerLink="/login/register">Bạn chưa có tài khoản?</p>
+        </div>
+      </form>
+      <div class="login-button">
+        <button class="login-submit" (click)="login()">Đăng nhập</button>
+      </div>
+      <p class="forgot-password" (click)="forgotPassword()" >Quên mật khẩu ?</p>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="introduce-customers">
+  <div class="introduce-customers-container">
+    <header class="notifications-header">
+      <span class="material-icons back" routerLink="/">
+        navigate_before
+      </span>
+      <h3 class="title">Giới thiệu KH</h3>
+    </header>
+    <div class="introduce-link" *ngIf="customerCurrent != undefined">
+      <h3>Link giới thiệu khách hàng</h3>
+      <div class="link">
+        <input type="text" [(ngModel)]="link">
+        <button [cdkCopyToClipboard]="link">Coppy</button>
+        <!-- <p>{{customerCurrent.AffiliationLink}}</p> -->
+        <!-- <div class="button copy-link" routerLink="/pages/home/link-introduce" >Copy link</div> -->
+      </div>
+    </div>
+    <div class="introduce-id" *ngIf="customerCurrent != undefined">
+      <h3>Mã giới thiệu của bạn</h3>
+      <div class="link">
+        <p>{{customerId}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="dialog-container container">
+    <div class="row">
+        <div class="col-10 create-seminor">
+            <span class="dialog-title">Sửa hội thảo</span>
+        </div>
+        <div class="col-1">
+            <span class="close-button" (click)="closeDialog()"><i class="material-icons"> close </i></span>
+        </div>
+    </div><br>
+    <form ngNativeValidate #createForm="ngForm" class="note-form">
+        <div class="row w-100">
+            <div class="col-3">
+                <mat-label for="">Tiêu đề:</mat-label>
+            </div>
+            <div class="col-9">
+                  <input matInput type="text" name="title" required [(ngModel)]="name">
+            </div>
+        </div>
+        <div class="row w-100">
+            <div class="col-3">
+                <mat-label for="">Thời gian:</mat-label>
+            </div>
+            <div class="col-9">
+                  <input matInput type="time" name="time" required>
+            </div>
+        </div>
+        <div class="row w-100">
+            <div class="col-3">
+                <mat-label for="">Ngày diễn ra:</mat-label>
+            </div>
+            <div class="col-9">
+                  <input matInput type="date" name="date" required>
+            </div>
+        </div>
+        <div class="row w-100 content">
+            <div class="col-3 mt-4">
+                <mat-label>Nội dung:</mat-label>
+            </div>
+            <div class="col-9">
+                    <textarea name="" id="" cols="30" rows="10" [(ngModel)]="description" class="textarea"></textarea>
+            </div>
+        </div><br>
+        <div class="row w-100 content">
+            <div class="col-3 mt-4">
+                <mat-label>Ảnh:</mat-label>
+            </div>
+            <div class="col-9 imageForm" style="height: 10em;">
+                <label for="seminor" class="w-100 h-100"><img [src]="imageSeminorString"
+                        *ngIf="imageSeminorString" class="img-fluid mb-1"></label>
+                <label for="seminor"><span class="material-icons">
+                        add_a_photo
+                    </span></label>
+            </div>
+            <input #seminor type="file" accept='image/*' id="seminor"
+                (change)="processFileSeminorImage(seminor.files)" required hidden>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center text-light">
+                <button class="btn customBtn" (click) = "editSeminor()">Cập nhật</button>
+            </div>
+        </div><br>
+    </form>
+</div>

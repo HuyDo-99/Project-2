@@ -1,0 +1,46 @@
+<div class="forgot-password container">
+    <div class="header">
+        <button routerLink="/login" class="material-icons"> arrow_back_ios </button>
+        <span class="title">Đăng ký tài khoản</span>
+    </div>
+    
+   
+    <div class="avatar">
+        <p *ngIf="!userAvatarString">Chưa có ảnh đại diện</p>
+        <img [src]="userAvatarString" *ngIf="userAvatarString">
+        <label for="userAvatar">
+          <span class="material-icons">
+            add_a_photo
+          </span>
+        </label>
+        <input #userAvatar type="file" accept="image/*" id="userAvatar"
+          (change)="processFileUserAvatar(userAvatar.files)" hidden />
+      </div>
+      <div class="text-form">
+        <div class="form-input">
+            <input [(ngModel)]="name" type="text" name="text" placeholder="Họ tên" />
+        </div>
+    
+        <div class="form-input">
+            <input [(ngModel)]="email" type="email" name="email" placeholder="Email" />
+        </div>
+    
+        <div class="form-input">
+            <input [(ngModel)]="phone" type="text" name="phone" placeholder="Điện thoại" />
+        </div>
+    
+        <div class="form-input">
+            <input [(ngModel)]="password" type="password" name="password" placeholder="Mật khẩu" />
+        </div>
+    
+        <div class="form-input">
+            <input type="text" name="referenId" [(ngModel)]="referenId" placeholder="Mã giới thiệu" />
+        </div>
+    
+       
+      </div>
+      <div class="submit-button">
+        <button type="submit" (click)="createAccount()">Gửi</button>
+    </div>
+   
+</div>

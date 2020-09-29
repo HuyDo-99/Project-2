@@ -1,0 +1,30 @@
+<div class="container-fluid seminor">
+    <div class="create-seminor">
+        <mat-icon (click)="openCreateForm()">add_circle_outline</mat-icon>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="table-hover table-striped text-center customTableStyle">
+        <ng-container matColumnDef="Tiêu đề">
+            <th mat-header-cell *matHeaderCellDef>Tên</th>
+            <td mat-cell *matCellDef="let element"></td>
+        </ng-container>
+        <ng-container matColumnDef="Hình ảnh">
+            <th mat-header-cell *matHeaderCellDef> Số lượng book max</th>
+            <td mat-cell *matCellDef="let element"> </td>
+        </ng-container>
+        <ng-container matColumnDef="Nội dung">
+            <th mat-header-cell *matHeaderCellDef> Số lượng khung giờ</th>
+            <td mat-cell *matCellDef="let element"> </td>
+        </ng-container>
+        <ng-container matColumnDef="Thời gian">
+            <th mat-header-cell *matHeaderCellDef class="a"> Tác vụ </th>
+            <td mat-cell *matCellDef="let element"> </td>
+        </ng-container>
+        <ng-container matColumnDef="Tác vụ">
+            <th mat-header-cell *matHeaderCellDef class="b"> Trạng thái </th>
+            <td mat-cell *matCellDef="let element"> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="paginatorStyle" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons="false"></mat-paginator>
+</div>

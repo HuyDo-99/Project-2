@@ -1,0 +1,61 @@
+//top menu
+.account {
+    text-align: center;
+    color: #224177;
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: bold
+}
+.material-icons {
+    color: #224177;
+    font-size: 27px;
+    /* width: 11px; */
+    font-weight: bold;
+}
+
+.container {
+    height: 15vh;
+}
+//top menu
+.time {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+.select-time {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: #EBEBEB;
+    margin: 5px 5px;
+    height: 45px;
+}
+.time-slot {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Segoe UI;
+    vertical-align: middle;
+}
+.slot {
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+    font-family: Segoe UI;
+}
+.btn {
+    width: 100%;
+    margin-top: 15vh;
+}
+button {
+    border-radius: 20px;
+    width: 191px;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    color: #375384;
+    background-color: #D5E7F7;
+}

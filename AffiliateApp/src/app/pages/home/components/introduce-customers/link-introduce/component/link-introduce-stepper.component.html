@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="header">
+        <div>
+            <img src="../../../../../../assets/svg/Group 4534.png" alt="" class="logo">
+        </div>
+    </div>
+    <div>
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="createCustomer">
+                <form [formGroup]="createCustomer">
+                    <ng-template matStepLabel>Đăng ký</ng-template>
+                    <div class="container-fluid">
+                        <div class="create-account">
+                            Đăng ký tài khoản
+                        </div>
+                        <div>
+                            <form [formGroup]="createCustomer">
+                                <div class="row form-regis">
+                                    <p>Họ tên</p>
+                                    <input formControlName="FirstName" style="padding-left: 6rem; padding-right: 10px;" type="text" >
+                                </div>
+                                <div class="row form-regis">
+                                    <p>Email</p>
+                                    <input formControlName="Email" style="padding-left: 6rem; padding-right: 10px;" type="email" >
+                                </div>
+                                <div class="row form-regis">
+                                    <p>Điện thoại</p>
+                                    <input formControlName="Phone" style="padding-left: 8rem; padding-right: 10px;" type="text" >
+                                </div>
+
+                                <div class="row form-regis">
+                                    <p>Mật khẩu</p>
+                                    <input formControlName="Password" style="padding-left: 8rem; padding-right: 10px;" type="password">
+                                </div>
+                                <div class="row form-regis">
+                                    <p>Xác nhận lại</p>
+                                    <input style="padding-left: 7em; padding-right: 10px;" type="password" >
+                                </div>
+                                <div class="row form-regis">
+                                    <p>Mã giới thiệu</p>
+                                    <input readonly style="text-align: center;" formControlName="ReferencedCustomerId" type="text">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="btn">
+                            <button matStepperNext (click)="registerCustomer()">Đăng kí</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Tải ứng dụng</ng-template>
+                    <app-link-introduce2></app-link-introduce2>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Đăng nhập</ng-template>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+
+</div>

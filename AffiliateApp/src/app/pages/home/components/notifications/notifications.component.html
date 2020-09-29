@@ -1,0 +1,26 @@
+<div class="notifications-page">
+  <div class="notification-page-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">Thông báo</h3>
+    </header>
+    <div class="notifications-content">
+      <div *ngFor="let item of listNoti"
+        class="notification-content"
+        routerLink="/pages/home/notifications/details/{{item.NotificationId}}"
+      >
+        <div class="logo">
+          <img src="{{item.ImageUrl}}" alt="logo" />
+        </div>
+        <div class="content">
+          <h4 class="title">{{item.Name}}</h4>
+          <p>{{item.Description}}</p>
+          <p>{{item.TimeString}}<span> - {{item.DateString}}</span></p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="customer-service-info">
+  <div class="customer-info-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">Hồ sơ KH</h3>
+    </header>
+    <div class="info">
+      <div class="customer-avatar">
+        <img src="{{imageURL}}"alt="customer-avatar" class="ava"/>
+      </div>
+      <div class="customer-info">
+        <h3 class="fullName">{{fullname}}</h3>
+        <p class="customerId">Mã KH: <span>{{customerid}}</span></p>
+        <p class="affiliate">Người giới thiệu: <span>{{affiliateName}}</span></p>
+      </div>
+    </div>
+
+    <div class="used-services">
+      <div class="service" *ngFor="let item of listNoti">
+        <h4 class="service-name">{{item.Name}}</h4>
+        <div class="service-value">
+          <div class="value">
+            <p>Giá trị:</p>
+            <span>{{item.Amount}}</span>
+          </div>
+          <div class="commission">
+            <p>Hoa Hồng:</p>
+            <span>{{item.Commission}}</span>
+            <button class="advisory">Đang tư vấn</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

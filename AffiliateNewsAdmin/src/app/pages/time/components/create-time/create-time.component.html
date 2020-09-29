@@ -1,0 +1,98 @@
+<div class="dialog-container container">
+    <div class="row">
+        <div class="col-10 create-seminor">
+            <span class="dialog-title">Tạo khung giờ</span>
+        </div>
+        <div class="col-1">
+            <span class="close-button" (click)="closeDialog()"><i class="material-icons"> close </i></span>
+        </div>
+    </div><br>
+    <form ngNativeValidate #createForm="ngForm" class="note-form">
+        <div class="row w-100">
+            <div class="col-4">
+                <mat-label for="">Tên</mat-label>
+            </div>
+            <div class="col-8">
+                <mat-form-field>
+                  <input matInput type="text" name="title" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row w-100">
+            <div class="col-4">
+                <mat-label for="">Số lượng book max</mat-label>
+            </div>
+            <div class="col-8">
+                <mat-form-field>
+                  <input matInput type="text" name="titile" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row w-100">
+            <div class="col-4">
+                <mat-label for="">Khung giờ:</mat-label>
+            </div>
+            <!-- <div class="col-9">
+                <mat-form-field>
+                  <input matInput type="date" name="date" required>
+                </mat-form-field>
+            </div> -->
+        </div>
+        <div class="time">
+            <div class="col-3-time">
+                <div class="a">
+                    8:00 - 9:00
+                </div>
+                <div class="a">
+                    <span class="close-button"><i class="material-icons">close</i></span>
+                </div>
+            </div>
+            <div class="col-3-time">
+                <div class="a">
+                    8:00 - 9:00
+                </div>
+                <div class="a">
+                    <span class="close-button"><i class="material-icons">close</i></span>
+                </div>
+            </div>  
+            <div class="col-3-time">
+                <div class="a">
+                    8:00 - 9:00
+                </div>
+                <div class="a">
+                    <span class="close-button"><i class="material-icons">close</i></span>
+                </div>
+            </div>
+            <div class="col-3-time">
+                <div class="a">
+                    8:00 - 9:00
+                </div>
+                <div class="a">
+                    <span class="close-button"><i class="material-icons">close</i></span>
+                </div>
+            </div>
+            <div class="col-3-time">
+                <div class="a">
+                    8:00 - 9:00
+                </div>
+                <div class="a">
+                    <span class="close-button"><i class="material-icons">close</i></span>
+                </div>
+            </div>
+            <div class="col-3-plus-time">
+                <div class="a">
+                    <span class="material-icons">add</span>
+                </div>
+                <div class="">
+                    Thêm khung giờ
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col text-center text-light">
+                <button class="btn customBtn">Tạo</button>
+            </div>
+        </div><br>
+    </form>
+</div>

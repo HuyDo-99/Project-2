@@ -1,0 +1,37 @@
+<div class="container-fluid">   
+    <div class="header">
+        <div>
+          <img src="../../../../../../assets/svg/Group 4534.png" alt="" class="logo">
+        </div>
+    </div>
+    <div>
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step>
+            <ng-template matStepLabel>Đăng ký</ng-template>
+        </mat-step>
+        <mat-step >
+            <ng-template matStepLabel>Tải ứng dụng</ng-template>
+            <app-link-introduce2></app-link-introduce2>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Đăng nhập</ng-template>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>  
+    <div class="create-account">
+        Đăng ký tài khoản
+    </div>
+    <div>
+        <form>
+            <input type="text" placeholder="Họ và tên">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Điện thoại">
+            <input type="text" placeholder="Mật khẩu">
+            <input type="text" placeholder="Xác nhận lại">
+            <input type="text" placeholder="Mã giới thiệu">
+        </form>
+    </div>
+    <div class="btn" routerLink="/pages/home/link-introduce2">
+        <button>Đăng kí</button>
+    </div>
+</div>

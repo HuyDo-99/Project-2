@@ -1,0 +1,26 @@
+<div class="introduced-customers">
+  <div class="introduced-customers-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">KH đã giới thiệu</h3>
+    </header>
+    <div class="container-fluid body-container">
+      <mat-tab-group>
+        <mat-tab label="Danh sách">
+          <ng-template mat-tab-label>
+            <span>Danh sách</span>
+          </ng-template>
+          <app-introduced-customer-list></app-introduced-customer-list>
+        </mat-tab>
+        <mat-tab label="Phân cấp">
+          <ng-template mat-tab-label>
+            <span>Phân cấp</span>
+          </ng-template>
+          <app-hierarchy></app-hierarchy>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

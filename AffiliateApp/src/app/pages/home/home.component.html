@@ -1,0 +1,119 @@
+<div class="home-page">
+  <div class="home-page-container">
+    <header class="header">
+      <h3 class="title">Affiliate</h3>
+      <span class="material-icons notifications" routerLink="./notifications">
+        notifications
+      </span>
+    </header>
+    <div class="account-infos">
+      <div class="info">
+        <div class="employee-avatar" >
+          <img *ngIf="customerDetail != undefined" src="{{customerDetail.ProfileImageURL}}" alt="avatar"/>
+        </div>
+        <div class="employee-info">
+          <h3 class="fullName" *ngIf="customerDetail != undefined">{{customerDetail.FullNameAndID}}</h3>
+          <p class="customerId" *ngIf="customerDetail != undefined">Mã KH: <span>{{customerDetail.CustomerID}}</span>
+          </p>
+          <p class="affiliate">Affiliate:<span>
+              <div class="rate" routerLink="affiliate-rank">
+                <input disabled type="radio" id="star4" [checked]="rankingValue == 4" name="rate" />
+                <label for="star4"  title="text">4 stars</label>
+                <input disabled [checked]="rankingValue == 3" type="radio" id="star3" name="rate" />
+                <label for="star3" title="text">3 stars</label>
+                <input disabled [checked]="rankingValue == 2" type="radio" id="star2" name="rate" />
+                <label for="star2" title="text">2 stars</label>
+                <input disabled [checked]="rankingValue == 1" type="radio" id="star1" name="rate" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="other-info">
+        <div class="surplus">
+          <p>Số dư: <span> {{accountBalance | number: "."}} VNĐ </span></p>
+        </div>
+        <div class="function">
+          <div class="payment">
+            <span class="material-icons balance">
+              account_balance_wallet
+            </span>
+            <p>Thanh toán</p>
+          </div>
+          <div class="introduce-customer" routerLink="introduce-customer">
+            <span class="material-icons email">
+              email
+            </span>
+            <p>Giới thiệu KH</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="affiliate-info">
+      <div class="detail-header">
+        <p>KH đã giới thiệu</p>
+        <p routerLink="./introduced-customer" class="detail">Chi tiết</p>
+      </div>
+      <div class="detail-info">
+        <div class="left-side">
+          <div class="amount">
+            <p class="amount-number"> {{customerSum}} </p>
+            <p>Tổng</p>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="notadvisory">
+            <p class="amount-number"> {{otherCount}} </p>
+            <p>Chưa tư vấn</p>
+          </div>
+          <div class="advisor">
+            <p class="amount-number"> {{l6Count}} </p>
+            <p>Đã tư vấn</p>
+          </div>
+          <div class="pileofmoney">
+            <p class="amount-number"> {{l7Count}} </p>
+            <p>Đã cọc</p>
+          </div>
+          <div class="payment">
+            <p class="amount-number"> {{l8Count}} </p>
+            <p>Đã đóng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="header-info">
+        <div class="statistical">
+          <p>Thống kê</p>
+          <p routerLink="./statistical" class="details">Chi tiết</p>
+        </div>
+        <div class="amount-value">
+          <p>Tổng: <span>{{total | number:'.'}} VNĐ</span></p>
+        </div>
+      </div>
+      <!-- <app-chart></app-chart> -->
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [yaxis]="chartOptions.yaxis"
+          [fill]="chartOptions.fill"
+          [xaxis]="chartOptions.xaxis"
+        ></apx-chart>
+      </div>
+      <div class="incomeyear">
+        <span class="material-icons left" (click)="getLastYear()">
+          keyboard_arrow_left
+        </span>
+        <p>{{ year }}</p>
+        <span class="material-icons right" (click)="getNextYear()">
+          keyboard_arrow_right
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

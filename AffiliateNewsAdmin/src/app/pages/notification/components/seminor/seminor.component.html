@@ -1,0 +1,63 @@
+<div class="container-fluid seminor">
+    <div class="create-seminor">
+        <mat-icon (click)="openCreateForm()">add_circle_outline</mat-icon>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="table-hover table-striped text-center customTableStyle">
+        <ng-container matColumnDef="Tiêu đề">
+            <th mat-header-cell *matHeaderCellDef>Tiêu đề </th>
+            <td mat-cell *matCellDef="let seminor">
+                <div>{{seminor.Name}}</div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Hình ảnh">
+            <th mat-header-cell *matHeaderCellDef> Hình ảnh </th>
+            <td mat-cell *matCellDef="let seminor">
+                <div class="post-image">
+                    <img src="{{seminor.ImageUrl}}" alt="" srcset="">
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Nội dung">
+            <th mat-header-cell *matHeaderCellDef> Nội dung </th>
+            <td mat-cell *matCellDef="let seminor">
+                <div>
+                    {{seminor.Description}}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Thời gian">
+            <th mat-header-cell *matHeaderCellDef> Thời gian </th>
+            <td mat-cell *matCellDef="let seminor">
+                <div>
+                    {{seminor.TimeString}}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Ngày diễn ra">
+            <th mat-header-cell *matHeaderCellDef> Ngày diễn ra </th>
+            <td mat-cell *matCellDef="let seminor">
+                <div>
+                    {{seminor.DateString}}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Tác vụ">
+            <th mat-header-cell *matHeaderCellDef> Tác vụ </th>
+            <td mat-cell *matCellDef="let seminor">
+                <button class="add-button" matTooltip="Sửa tin tức" (click)="editSeminor(seminor.NotificationId)">
+                    <i class="material-icons">
+                        create
+                    </i>
+                </button>
+                <button class="add-button" matTooltip="Xóa tin tức" (click)="deleteSeminor(seminor.NotificationId)">
+                    <i class="material-icons">
+                        delete
+                    </i>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="paginatorStyle" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons="false"></mat-paginator>
+</div>

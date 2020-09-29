@@ -1,0 +1,101 @@
+.forgot-password {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    right: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+        button {
+            background: none;
+            border: none;
+            font-size: 1.8em;
+            outline: none;
+            color: #224177;
+            position: absolute;
+            left: 0;
+        }
+        .title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #224177;
+            
+        }
+    }
+  
+    .form-input {
+        margin-top: .5em;
+        span {
+            color: #224177;
+        }
+        input {
+            width: 100%;
+            border: 1px solid #ced6e1;
+            border-radius: 2.5rem;
+            padding: 1rem;
+            margin-top: 2vh;
+            color: #224177;
+            outline: none;
+            ::placeholder {
+              color: #224177;
+            }
+          }
+    }
+
+    .submit-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 2.5em;
+        button {
+            width: 19rem;
+            height: 4rem;
+            background-color: #d5e7f7;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #224177;
+        }
+    }
+    
+   
+}
+
+.avatar {
+    width: 113px;
+    height: 113px;
+    border: 1px solid #224177;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 !important;
+    border-radius: 50%;
+    p {
+      color: #fff;
+      margin-top: 2.5em;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  
+    .material-icons {
+      position: absolute;
+      bottom: 5px;
+      right: 7px;
+      color: #224177 !important;
+      font-size: 1.5em;
+    }
+  }
+
+  .text-form {
+    height: 50%;
+    overflow: auto;
+  }

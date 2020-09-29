@@ -1,0 +1,111 @@
+<div class="news-container">
+  <div class="title">
+    Tin tức
+  </div>
+
+
+  <div class="container-fluid body-container">
+    <mat-tab-group (selectedTabChange)="onTabChanged($event)">
+      <mat-tab label="Tất cả">
+        <ng-template mat-tab-label>
+          <span>Tất cả</span>
+        </ng-template>
+        <div class="tab-content">
+          <!-- <mat-card class="top-card" routerLink="/pages/news/{{fistNews.NotificationId}}">
+
+            <img src="{{fistNews.ImageUrl}}">
+            <mat-card-header>
+              <mat-card-title>
+                {{fistNews.Name}}
+              </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+
+              <span>Thẩm mỹ</span>
+              <p>{{fistNews.Description}}</p>
+
+
+            </mat-card-content>
+          </mat-card> -->
+          <div class="post" *ngFor="let news of newsList" routerLink="/pages/news/{{news.NotificationId}}">
+            <div class="post__image">
+              <img src="{{news.ImageUrl}}" alt="">
+            </div>
+            <div class="post__content">
+              <div class="post__title">
+                {{news.Name}}
+              </div>
+              <span class="category-stamp">{{news.CategoryName}}</span>
+              <p class="description">
+                {{news.Description}}
+              </p>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </mat-tab>
+      <mat-tab label="Thẩm mỹ">
+        <ng-template mat-tab-label>
+          <span>Thẩm mỹ</span>
+        </ng-template>
+
+        <div class="tab-content">
+         
+          <div class="post" *ngFor="let news of beautyList"  routerLink="/pages/news/{{news.NotificationId}}">
+            <div class="post__image">
+              <img src="{{news.ImageUrl}}" alt="">
+            </div>
+            <div class="post__content">
+              <div class="post__title">
+                {{news.Name}}
+              </div>
+              <span class="category-stamp">{{news.CategoryName}}</span>
+              <p class="description">
+                {{news.Description}}
+              </p>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Làm đẹp">
+        <ng-template mat-tab-label>
+          <span>Làm đẹp</span>
+        </ng-template>
+        <div class="tab-content">
+         
+          <div class="post" *ngFor="let news of makeupList" routerLink="/pages/news/{{news.NotificationId}}">
+            <div class="post__image">
+              <img src="{{news.ImageUrl}}" alt="">
+            </div>
+            <div class="post__content">
+              <div class="post__title">
+                {{news.Name}}
+              </div>
+              <span class="category-stamp">{{news.CategoryName}}</span>
+              <p class="description">
+                {{news.Description}}
+              </p>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+
+</div>

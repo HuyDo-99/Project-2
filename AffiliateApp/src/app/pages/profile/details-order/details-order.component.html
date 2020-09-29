@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="container" style="height: 15vh;">
+        <div class="row">
+          <div class="col-2">
+            <h3 class="dots">
+              <span class="material-icons" routerLink="/pages/profile">keyboard_arrow_left</span>
+            </h3>
+          </div>
+          <div class="col-8">
+            <h3 class="account">Chi tiết đơn hàng</h3>
+          </div>
+          <div class="col-2"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+          <div class="col-3 input-text">
+            Tên
+          </div>
+          <div class="col-9">
+             <p>{{contractContent}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 input-text">
+            Ngày
+          </div>
+          <div class="col-9">
+            <p>{{signedDate | date : 'dd/MM/yyyy'}}</p>
+            <!-- <input type="date" [(ngModel)]="signedDate"> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 input-text">
+            Dịch vụ
+          </div>
+          <div class="col-9">
+            <p>{{SurgerySubServiceName}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 input-text">
+            Giá trị
+          </div>
+          <div class="col-9">
+            <p>{{Amount | number: "1.0-0"}} VNĐ</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 input-text">
+            Đã thu
+          </div>
+          <div class="col-9">
+            <p>{{TotalContractPayment |number : '1.0-0'}} VNĐ</p>
+          </div> 
+        </div>
+        <div class="row">
+            <div class="col-3 input-text">
+              Ảnh
+            </div>
+            <div class="col-9">
+              <div class="img">
+                  <img src="{{imgUrl}}" alt="">
+              </div>
+            </div>
+          </div>
+</div>

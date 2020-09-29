@@ -1,0 +1,20 @@
+<div class="notification-details">
+  <div class="notification-details-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">Thông báo</h3>
+    </header>
+    <div class="logo">
+      <img src="{{imageURL}}" alt="logo" />
+    </div>
+    <div class="content">
+      <h3 class="topic">{{name}}</h3>
+      <p class="time">{{timeString}}<span> - {{dateString}}</span></p>
+      <p>
+       {{description}}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="dialog-container container">
+    <div class="row">
+        <div class="col-10">
+            <div class="dialog-title">Tạo tin tức</div>
+        </div>
+        <div class="col-2 pl-4">
+            <span class="material-icons close-button" (click)="closeDialog()">
+                close
+            </span>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3">
+            <mat-label>Tiêu đề:</mat-label>
+        </div>
+        <div class="col-9">
+            <input class="form-control" [(ngModel)]="name">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3">
+            <mat-label>Chuyên mục:</mat-label>
+        </div>
+        <div class="col-9">
+          <select [(ngModel)]="categoryId" class="form-control" (change)="chooseCategory($event.target.value)">
+              <option *ngFor="let category of categories" [value]="category.CategoryId"> {{category.Name}} </option>
+          </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3"><br>
+            <mat-label>Nội dung:</mat-label>
+        </div>
+        <div class="col-9">
+            <textarea class="form-control" rows="6" [(ngModel)]="description"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3"><br>
+            <mat-label for="">Ảnh:</mat-label>
+        </div>
+        <div class="col-9 text-center">
+            <div class="imageForm">
+                <label for="post" class="w-100 h-100"><img [src]="postImage" *ngIf="postImage"
+                        class="img-fluid mb-1"></label>
+                        <label for="post"><span class="material-icons">add_a_photo</span></label>
+            </div>
+            <input #post type="file" accept='image/*' id="post"
+                (change)="processPostImage(post.files)" required hidden>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center text-light">
+            <button class="btn customBtn" (click)="createNews()">Tạo</button>
+        </div>
+    </div>
+       
+</div>

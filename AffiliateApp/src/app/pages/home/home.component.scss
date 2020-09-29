@@ -1,0 +1,252 @@
+.home-page {
+  width: 100vw;
+  height: 100vh;
+ 
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  .home-page-container {
+    width: 90%;
+    margin: 0 auto;
+
+    header {
+      text-align: center;
+      position: relative;
+
+      .title {
+        color: #224177;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 10px;
+      }
+
+      .notifications {
+        color: #224177;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .account-infos {
+      background-color: #dde9f3;
+      border-radius: 2rem;
+      padding: 1.1rem 1.1rem;
+      margin-top: 1.4rem;
+
+      .info {
+        display: flex;
+        // padding-bottom: 1.5rem;
+
+        .employee-avatar {
+          margin: 5px 10px 0 5px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+         
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+
+        .employee-info {
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .other-info {
+        border-top: 1px solid #fff;
+
+        .surplus {
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+
+          span {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-left: 2rem;
+          }
+        }
+
+        .function {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          border: 0.05rem solid #707070;
+          border-radius: 2rem;
+          background: #fff;
+
+          .payment,
+          .introduce-customer {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+
+            span {
+              color: #224177;
+            }
+
+            p {
+              color: #224177;
+              margin-left: 1.4rem;
+            }
+          }
+
+          .payment {
+            border-right: 0.05rem solid #224177;
+          }
+        }
+      }
+    }
+
+    .affiliate-info {
+      border: 0.05rem solid #707070;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+
+      .detail-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+
+        p:first-child {
+          font-weight: 500;
+        }
+      }
+
+      .detail-info {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        margin-top: 1.4rem;
+
+        .left-side {
+          border-right: 0.1rem solid #224177;
+
+          .amount {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .amount-number {
+              font-size: 1.6rem;
+              background-color: #ddb148;
+              width: 4rem;
+              height: 4rem;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 0.8rem;
+            }
+          }
+        }
+
+        .right-side {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 1rem;
+
+          p {
+            font-size: 1.1rem;
+          }
+
+          .notadvisory,
+          .advisor,
+          .pileofmoney,
+          .payment {
+            text-align: center;
+
+            p:first-child {
+              font-size: 1.6rem;
+              background-color: #fafafa;
+              width: 4rem;
+              height: 4rem;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    .charts {
+      margin-top: 1.9rem;
+      padding: 1.1rem;
+      border: 0.05rem solid #707070;
+      border-radius: 2rem;
+
+      .statistical {
+        display: flex;
+        justify-content: space-between;
+
+        &:first-child {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        .details {
+          font-weight: normal;
+        }
+      }
+
+      .amount-value {
+        color: #ddb148;
+        margin-top: 1rem;
+      }
+
+      .incomeyear {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.rate {
+  // float: left;
+  height: 25px;
+  padding: 0 10px;
+  position: relative;
+  bottom: 22px;
+  left: 55px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 26px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+
+@media only screen and (max-height: 740px) {
+  .home-page {
+    height: 90vh;
+    overflow: auto;
+  }
+}

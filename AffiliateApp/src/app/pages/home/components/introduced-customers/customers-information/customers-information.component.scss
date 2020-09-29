@@ -1,0 +1,103 @@
+.customer-service-info {
+  width: 100vw;
+  height: 100vh;
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  .customer-info-container {
+    width: 90%;
+    margin: 0 auto;
+
+    header.notifications-header {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      color: #224177;
+      margin-bottom: 2rem;
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      border-radius: 2rem;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      .customer-avatar {
+        margin-right: 3rem;
+        
+      }
+
+      .customer-info {
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .used-services {
+      overflow: auto;
+      height: 90vh;
+      .service {
+        background-color: #fafafa;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .service-name {
+          text-align: center;
+          font-weight: 600;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid #dce0e8;
+          padding: 0.5rem;
+        }
+
+        .service-value {
+          .value {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+          }
+
+          .commission {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .advisory {
+              border: none;
+              background-color: #d5e7f7;
+              border-radius: 2rem;
+              color: #4a6390;
+              font-weight: 500;
+              padding: 0.3rem 1.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ava {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

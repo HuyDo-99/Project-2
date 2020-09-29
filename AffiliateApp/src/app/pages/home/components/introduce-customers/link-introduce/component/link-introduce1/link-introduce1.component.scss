@@ -1,0 +1,44 @@
+// .header {
+
+// }
+.container-fluid{
+    padding: 10px 30px;
+}
+.logo {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+}
+.create-account {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    color: #224177;
+    height: 7vh;
+}
+input {
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    margin: 1em 0em;
+    border-color:#224177;
+    box-sizing: 2px;
+    border-width: 0.25px;
+    padding: 0 10px;
+}
+button {
+    background-color: #D5E7F7;
+    width: 191px;
+    height: 40px;
+    color: #375384;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Segoe UI;
+    border-radius: 20px;
+    border: none;
+}
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

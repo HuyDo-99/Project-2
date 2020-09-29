@@ -1,0 +1,105 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+  .login-container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+
+    .logo {
+      text-align: center;
+      margin-top: 4.4rem;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      margin-top: 10.2rem;
+
+      .login-form {
+        h2 {
+          font-size: 2.4rem;
+          color: #224177;
+          font-weight: 500;
+        }
+        p{
+          color: red;
+        };
+
+        input {
+          width: 100%;
+          margin-bottom: 2.5rem;
+          border: 1px solid #ced6e1;
+          border-radius: 2.5rem;
+          padding: 1rem;
+
+          ::placeholder {
+            color: #224177;
+          }
+        }
+
+        .save__login-info {
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            color: #224177;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+          }
+
+          .save-info {
+            width: 3.7rem;
+            height: 1.9rem;
+            border: 0.1rem solid #224177;
+            border-radius: 2rem;
+            position: relative;
+
+            &::before {
+              content: "";
+              width: 1.5rem;
+              height: 1.5rem;
+              background-color: #224177;
+              display: block;
+              position: absolute;
+              top: 4%;
+              right: 4%;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      .login-button {
+        text-align: center;
+        margin-top: 5.5rem;
+
+        .login-submit {
+          width: 19rem;
+          height: 4rem;
+          background-color: #d5e7f7;
+          border: none;
+          border-radius: 2rem;
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+      }
+
+      .forgot-password {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #224177;
+        margin-top: 1.5rem;
+      }
+
+      .register {
+        color: #224177;
+        position: absolute;
+        bottom: 10vh;
+        left: 0;
+      }
+    }
+  }
+}

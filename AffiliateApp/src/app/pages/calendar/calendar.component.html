@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h3 class="account">Lịch hẹn</h3>
+      </div>
+      <div class="col-4">
+        <h3 class="dots">
+          <span class="material-icons" routerLink="create-calender">add_circle_outline</span>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="calendar-wrapper">
+    <ejs-calendar (change)="onValueChange($event)" class="e-customStyle"></ejs-calendar>
+  </div>
+  <div class="calendar-customer">
+    <div class="calendar-customer-container">
+      <div class="calendar-contents">
+        <div class="calendar-content" *ngFor="let customerAppointment of customerAppointments">
+          <div class="left-side">
+            <div id="date">
+              {{ customerAppointment.ScheduleDate }}
+            </div>
+            <div id="time">
+              {{ customerAppointment.ScheduleTime }}
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="logo">
+              <img src="assets/images/Group 1836.png" alt="logo" />
+            </div>
+            <div class="medical-information">
+              <!-- <p class="doctor-name">Bác sĩ: <span>Nguyễn Thu Hà</span></p> -->
+              <span *ngIf="customerAppointment.Type == 1" id="service"
+                >Phẫu thuật</span
+              >
+              <span *ngIf="customerAppointment.Type == 2" id="service"
+                >Khám, tái khám</span
+              >
+              <span *ngIf="customerAppointment.Type == 3" id="service"
+                >Thay băng cắt chỉ</span
+              >
+              <span *ngIf="customerAppointment.Type == 4" id="service"
+                >Tư vấn</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="calendar-content" *ngFor="let customerReminder of customerReminders">
+          <div class="left-side">
+            <div id="date">
+              {{ customerReminder.ReminderDate }}
+            </div>
+            <div id="time">
+              {{ customerReminder.ReminderTime }}
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="logo">
+              <img src="assets/images/Group 1836.png" alt="logo" />
+            </div>
+            <div class="medical-information">
+              <!-- <p class="doctor-name">Bác sĩ: <span>Nguyễn Thu Hà</span></p> -->
+              <span id="service">Tư vấn</span>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="!customerAppointments?.length && !customerReminders?.length">
+          Không có cuộc hẹn nào ngày hôm nay
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

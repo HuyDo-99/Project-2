@@ -1,0 +1,64 @@
+<div class="statistical">
+  <div class="statistical-container">
+    <header class="notifications-header">
+      <span class="material-icons back" (click)="backClicked()">
+        navigate_before
+      </span>
+      <h3 class="title">Thống kê</h3>
+    </header>
+    <div class="menu-header">
+      <div class="chart" routerLink="./">
+        <span>Biểu đồ</span>
+      </div>
+      <div class="list">
+        <span routerLink="./list">Danh sách</span>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="header-info">
+        <div class="statisticals">
+          <p>Thống kê</p>
+          <!-- <p class="details">Chi tiết</p> -->
+        </div>
+        <div class="amount-value">
+          <p>Tổng: <span>{{total | number:'.'}} VNĐ</span></p>
+        </div>
+      </div>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions"
+          [yaxis]="chartOptions.yaxis"
+          [fill]="chartOptions.fill"
+          [xaxis]="chartOptions.xaxis"
+        ></apx-chart>
+      </div>
+      <div class="incomeyear">
+        <span class="material-icons left" (click)="getLastYear()">
+          keyboard_arrow_left
+        </span>
+        <p>{{ year }}</p>
+        <span class="material-icons right" (click)="getNextYear()">
+          keyboard_arrow_right
+        </span>
+      </div>
+    </div>
+
+    <div class="customers">
+      <div class="customer" *ngFor="let item of commissionList">
+        <!-- <div class="customer-avatar">
+          <img
+            src="../../../../../assets/images/60e1b6ae6b6ec95512a8ea4426a6b967.png"
+            alt="customer avatar"
+          />
+        </div> -->
+        <div class="customer-info">
+          <h3 class="fullName">{{item.AffiliatedCustomerFullName}}</h3>
+          <p class="commission">Hoa hồng: <span>{{item.Amount | number:'.'}} VNĐ</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
